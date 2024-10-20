@@ -1,0 +1,268 @@
+/* Reset y Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS */
+:root {
+    --color-principal: #727272;
+    --color-secundario: #acacac;
+    --color-fondo: #f5f5f5;
+    --color-texto: white;
+}
+
+/* Estilos del Body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Mantener el footer al final */
+}
+
+/* Estilos del Header */
+header {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    text-align: center;
+    padding: 20px 10px; /* Ajuste de padding para mayor espacio */
+    position: sticky;
+}
+
+/* Ajuste del tamaño del título para ser más responsivo */
+header h1 {
+    font-size: 2.5rem; /* Ajuste responsivo */
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Tamaño menor en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Tamaño menor en pantallas móviles */
+    }
+}
+
+/* Estilos de la Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    padding: 10px;
+    flex-wrap: wrap; /* Para que los enlaces se ajusten en pantallas pequeñas */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #333; /* Cambia a un color diferente al pasar el mouse */
+}
+
+/* Ajuste de la navegación en pantallas pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaciado vertical en lugar de horizontal */
+    }
+}
+
+/* Estilos del Main */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-grow: 1; /* Para que el contenido ocupe el espacio restante */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+/* Contenedor de las Secciones */
+section {
+    flex: 2; /* Ocupa más espacio que el aside */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los elementos internos */
+    background-color: var(--color-fondo);
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px; /* Para mayor separación con otros elementos */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem; /* Ajuste del tamaño de fuente */
+    margin-bottom: 15px;
+}
+
+/* Ajuste del tamaño de los títulos en pantallas pequeñas */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Contenedor de imágenes con espacio uniforme */
+.contenedor-seccion {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio uniforme entre las imágenes */
+    padding: 10px; /* Espaciado alrededor del contenedor */
+    flex-wrap: wrap; /* Para que las imágenes se ajusten en pantallas pequeñas */
+}
+
+.imagen {
+    flex: 1;
+    display: flex; /* Usar flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Ajusta el contenedor al 100% del ancho disponible */
+    max-width: 400px; /* Limita el tamaño máximo de los contenedores en pantallas grandes */
+    height: auto;
+    overflow: hidden;
+}
+
+.imagen img {
+    width: 100%; /* Ajusta la imagen al 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Aside en la parte derecha */
+aside {
+    background-color: var(--color-fondo);
+    padding: 10px;
+    border: 1px solid #ddd;
+    flex: 1; /* Aside ocupa menos espacio que las secciones */
+    display: flex;
+    flex-direction: column; /* Para apilar el contenido dentro del aside */
+}
+
+/* Contenedor de imágenes en el aside */
+.contenedor-aside {
+    display: flex;
+    flex-direction: column; /* Asegurar que las imágenes se apilen verticalmente */
+    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center;
+    align-items: center; /* Centrar las imágenes en el aside */
+}
+
+.imagen-aside {
+    width: 100%; /* Ajustar al 100% del ancho disponible */
+    max-width: 300px; /* Limitar el tamaño en pantallas grandes */
+    height: auto;
+    overflow: hidden; /* Ocultar el desbordamiento si es necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-aside img {
+    width: 100%; /* Asegurar que las imágenes usen el ancho completo */
+    height: auto; /* Mantener proporciones */
+    object-fit: cover; /* Cubrir el contenedor sin deformarse */
+    border-radius: 5px;
+}
+
+/* Estilos del Footer */
+footer {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    line-height: 0.1;
+}
+
+p small {
+    line-height: 1 !important;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    /* En pantallas más pequeñas, aside irá debajo de las secciones */
+    main {
+        flex-direction: column; /* Aside debajo de las secciones */
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+
+    /* Ajustar las imágenes al ancho total en pantallas pequeñas */
+    .imagen img, .imagen-aside img {
+        width: 100%; /* Asegurar que las imágenes usen el ancho disponible */
+        height: auto; /* Mantener proporciones */
+    }
+
+    .contenedor-seccion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajuste de secciones en pantallas más pequeñas */
+    section {
+        padding: 15px; /* Reducir el padding */
+    }
+
+    .contenedor-seccion {
+        gap: 15px; /* Reducir el espacio entre las imágenes */
+    }
+}
+
+@media (max-width: 480px) {
+    /* En móviles, ajustar el diseño */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section, aside {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 5px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    /* Hacer que las imágenes ocupen el 100% del ancho en móviles */
+    .imagen img, .imagen-aside img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenedor-seccion {
+        flex-direction: column;
+        align-items: center;
+    }
+}
